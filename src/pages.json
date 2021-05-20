@@ -12,7 +12,7 @@
 		{
 			"path": "pages/detail/index",
 			"style": {
-				"navigationBarTitleText": "详情"
+				"navigationStyle": "custom"
 			}
 		}
 	],

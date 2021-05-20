@@ -1,10 +1,16 @@
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png"></image>
-    <view>
-      <text class="title">{{ title }}</text>
+  <view class="homePageWrap">
+    <view class="homePageContent">
+      <u-avatar
+        class="userAvatar"
+        size="large"
+        :src="require('../../static/avatar.jpg')"
+        @click="this.test"
+      />
+      <view class="userName">
+        <text class="title">{{ title }}</text>
+      </view>
     </view>
-    <u-button type="success" @click="jumpToDetail">点击跳转吧</u-button>
   </view>
 </template>
 
@@ -22,31 +28,33 @@ export default {
         url: "/pages/detail/index",
       });
     },
+    test() {
+      this.$u.request.getUserInfo().then((res) => {
+        console.log(res, "res");
+      });
+    },
   },
 };
 </script>
 
-<style>
-.content {
+<style lang='scss'>
+.homePageWrap {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50%;
+}
+.homePageContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin: 200rpx auto 50rpx auto;
-}
-
-.text-area {
-  display: flex;
-  justify-content: center;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
+  .userAvatar {
+    text-align: center;
+    margin-bottom: 36rpx;
+  }
+  .userName {
+    font-size: 36rpx;
+  }
 }
 </style>
