@@ -15,4 +15,6 @@ export default {
 <style lang="scss" rel="stylesheet/scss">
 /*每个页面公共css */
 @import "uview-ui/index.scss";
+/* icons */
+@import "./static/icons/index.css";
 </style>

@@ -1,15 +1,13 @@
 <template>
   <view class="homePageWrap">
+    <u-icon
+      name="shouye2"
+      custom-prefix="custom-icon"
+      size="30"
+      color="#888888"
+    ></u-icon>
     <view class="homePageContent">
-      <u-avatar
-        class="userAvatar"
-        size="large"
-        :src="require('../../static/avatar.jpg')"
-        @click="this.test"
-      />
-      <view class="userName">
-        <text class="title">{{ title }}</text>
-      </view>
+      <u-tabbar v-model="current" :list="tabBarList" />
     </view>
   </view>
 </template>
@@ -19,9 +17,27 @@ export default {
   data() {
     return {
       title: "Hello",
+      tabBarList: [
+        {
+          iconPath: "shouye2",
+          selectedIconPath: "home-fill",
+          text: "首页",
+          count: 2,
+          isDot: true,
+          customIcon: true,
+        },
+        {
+          iconPath: "photo",
+          selectedIconPath: "photo-fill",
+          text: "放映厅",
+          customIcon: false,
+        },
+      ],
     };
   },
-  onLoad() {},
+  onLoad() {
+    this.test();
+  },
   methods: {
     jumpToDetail() {
       uni.navigateTo({
