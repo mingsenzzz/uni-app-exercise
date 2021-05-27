@@ -33,6 +33,12 @@ export default {
           count: 2,
           customIcon: true,
         },
+        {
+          iconPath: "caidaniconwodehui",
+          selectedIconPath: "account1",
+          text: "账户",
+          customIcon: true,
+        },
       ],
     };
   },
