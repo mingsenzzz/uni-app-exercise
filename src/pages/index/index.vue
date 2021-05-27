@@ -1,13 +1,12 @@
 <template>
   <view class="homePageWrap">
-    <u-icon
-      name="shouye2"
-      custom-prefix="custom-icon"
-      size="30"
-      color="#888888"
-    ></u-icon>
     <view class="homePageContent">
-      <u-tabbar v-model="current" :list="tabBarList" />
+      <u-tabbar
+        v-model="current"
+        :list="tabBarList"
+        active-color="rgb(254, 104, 105)"
+        icon-size="40"
+      />
     </view>
   </view>
 </template>
@@ -17,20 +16,22 @@ export default {
   data() {
     return {
       title: "Hello",
+      current: 0,
       tabBarList: [
         {
-          iconPath: "shouye2",
-          selectedIconPath: "home-fill",
+          iconPath: "shouye1",
+          selectedIconPath: "shouye3",
           text: "首页",
           count: 2,
           isDot: true,
           customIcon: true,
         },
         {
-          iconPath: "photo",
-          selectedIconPath: "photo-fill",
-          text: "放映厅",
-          customIcon: false,
+          iconPath: "shiwu-",
+          selectedIconPath: "yinliao2",
+          text: "饮料",
+          count: 2,
+          customIcon: true,
         },
       ],
     };
