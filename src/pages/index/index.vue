@@ -1,5 +1,8 @@
 <template>
   <view class="homePageWrap">
+    <view>
+      <Swapper />
+    </view>
     <view class="homePageContent">
       <u-tabbar
         v-model="current"
@@ -12,6 +15,7 @@
 </template>
 
 <script>
+import Swapper from "../../components/swapper";
 export default {
   data() {
     return {
@@ -42,6 +46,9 @@ export default {
       ],
     };
   },
+  components: {
+    Swapper,
+  },
   onLoad() {
     this.test();
   },
@@ -65,7 +72,6 @@ export default {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 50%;
 }
 .homePageContent {
   display: flex;
