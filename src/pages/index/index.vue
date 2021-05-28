@@ -1,21 +1,25 @@
 <template>
   <view class="homePageWrap">
-    <view>
-      <Swapper />
-    </view>
     <view class="homePageContent">
-      <u-tabbar
-        v-model="current"
-        :list="tabBarList"
-        active-color="rgb(254, 104, 105)"
-        icon-size="40"
-      />
+      <view>
+        <Swapper />
+      </view>
+      <view>
+        <FoodClassification />
+      </view>
     </view>
+    <u-tabbar
+      v-model="current"
+      :list="tabBarList"
+      active-color="rgb(254, 104, 105)"
+      icon-size="40"
+    />
   </view>
 </template>
 
 <script>
 import Swapper from "../../components/swapper";
+import FoodClassification from "../../components/foodClassification";
 export default {
   data() {
     return {
@@ -48,6 +52,7 @@ export default {
   },
   components: {
     Swapper,
+    FoodClassification,
   },
   onLoad() {
     this.test();
