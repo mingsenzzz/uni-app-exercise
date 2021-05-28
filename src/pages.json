@@ -6,13 +6,29 @@
 		{
 			"path": "pages/index/index",
 			"style": {
+				"navigationStyle": "custom",
 				"navigationBarTitleText": "主页"
 			}
 		},
 		{
 			"path": "pages/detail/index",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "详情"
+			}
+		},
+		{
+			"path": "pages/drinks/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "饮料"
+			}
+		},
+		{
+			"path": "pages/personalCenter/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "个人中心"
 			}
 		}
 	],

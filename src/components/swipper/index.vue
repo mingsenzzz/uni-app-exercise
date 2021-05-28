@@ -4,8 +4,8 @@
       :list="imgsList"
       autoplay
       circular
-      height="250rpx"
       class="swiper"
+      height="250"
     ></u-swiper>
   </view>
 </template>
@@ -41,11 +41,20 @@ export default {
       }, 200);
     },
   },
+  watch: {
+    imgsList(v) {
+      console.log(v, "v");
+    },
+  },
 };
 </script>
 
 <style lang='scss'>
 .swripperWrap {
   width: 100vw;
+  height: 250rpx;
+  .swiper {
+    height: 250rpx;
+  }
 }
 </style>
