@@ -1,4 +1,4 @@
-const baseUrl = "/companyh5";
+const baseUrl = "companymanager/companyh5";
 
 export default (vm) => {
   let getUserInfo = (params = {}) =>

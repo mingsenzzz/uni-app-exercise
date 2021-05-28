@@ -35,6 +35,7 @@
                 <view
                   class="thumb-box"
                   v-for="(item1, index1) in item.foods"
+                  @click="toSeeFoodIntroduction(item1)"
                   :key="index1"
                 >
                   <image
@@ -102,6 +103,21 @@ export default {
             this[dataVal] = res.height;
           })
           .exec();
+      });
+    },
+    toSeeFoodIntroduction(info) {
+      this.$u.request.getFoodDetail({}).then((response) => {
+        if (response.code == "200") {
+          console.log(response, "response");
+          uni.navigateTo({
+            url: "../../pages/detail/index",
+            success: function (res) {
+              res.eventChannel.emit("acceptDataFromOpenerPage", {
+                data: response.data,
+              });
+            },
+          });
+        }
       });
     },
   },
