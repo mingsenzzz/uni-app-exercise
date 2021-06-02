@@ -40,14 +40,14 @@ export default {
 <style lang='scss'>
 .homePageWrap {
   display: flex;
-  justify-content: center;
   text-align: center;
+  padding-top: 50rpx;
+  height: 100vh;
 }
 .homePageContent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   .userAvatar {
     text-align: center;
     margin-bottom: 36rpx;
