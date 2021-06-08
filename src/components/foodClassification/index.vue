@@ -106,18 +106,13 @@ export default {
       });
     },
     toSeeFoodIntroduction(info) {
-      this.$u.request.getFoodDetail({}).then((response) => {
-        if (response.code == "200") {
-          console.log(response, "response");
-          uni.navigateTo({
-            url: "../../pages/detail/index",
-            success: function (res) {
-              res.eventChannel.emit("acceptDataFromOpenerPage", {
-                data: response.data,
-              });
-            },
-          });
-        }
+      uni.navigateTo({
+        url: `/pages/detail/index?id=${222}&name=我的`,
+        // success: function (res) {
+        //   res.eventChannel.emit("acceptDataFromOpenerPage", {
+        //     data: response.data,
+        //   });
+        // },
       });
     },
   },
