@@ -30,7 +30,12 @@
         </view>
         <view class="priceAndAddToCart">
           <view class="price"> ￥41 ￥79 </view>
-          <u-button class="addToCart" size="mini" shape="circle" type="success"
+          <u-button
+            class="addToCart"
+            size="mini"
+            shape="circle"
+            type="success"
+            @click="addToCart"
             >+ 加入购物车</u-button
           >
         </view>
@@ -66,7 +71,16 @@ export default {
       }
     });
   },
-  methods: {},
+  methods: {
+    addToCart() {
+      this.$store.dispatch("addOneProductToCartAction", {
+        icon:
+          "www.baidu.com/s?wd=%E9%AB%98%E8%80%83&sa=ire_dl_gh_logo_texing&rsv_dl=igh_logo_pc",
+        name: "柠檬水",
+        id: 22222,
+      });
+    },
+  },
 };
 </script>
 

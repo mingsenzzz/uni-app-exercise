@@ -10,13 +10,21 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 //tabbar无法使用navigator的方式切换tabbar
 export default {
   data() {
     return {
       title: "Hello",
       current: 0,
-      tabBarList: [
+    };
+  },
+  methods: {},
+  computed: mapState({
+    tabBarList(state) {
+      //饮料选中的个数，需要从store中的购物车中取，这样如果购物车发生改变，则菜单选中的个数也会同时更新
+      const count = state.cart.addedProducts.length;
+      return [
         {
           iconPath: "home",
           selectedIconPath: "home-fill",
@@ -29,7 +37,7 @@ export default {
           iconPath: "shiwu-",
           selectedIconPath: "yinliao2",
           text: "饮料",
-          count: 2,
+          count,
           customIcon: true,
         },
         {
@@ -38,10 +46,9 @@ export default {
           text: "账户",
           customIcon: true,
         },
-      ],
-    };
-  },
-  methods: {},
+      ];
+    },
+  }),
 };
 </script>
 
