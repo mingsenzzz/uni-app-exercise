@@ -3,7 +3,7 @@
     <u-tabbar
       v-model="currentActiveTab"
       :list="tabBarList"
-      @change="switchTabbar"
+      @change="onSwitchTabbar"
       active-color="rgb(254, 104, 105)"
       icon-size="40"
     />
@@ -25,11 +25,7 @@ export default {
     onSwitchTabbar: Function,
   },
 
-  methods: {
-    switchTabbar(key) {
-      this.onSwitchTabbar(key);
-    },
-  },
+  methods: {},
 
   computed: {
     ...mapState({
