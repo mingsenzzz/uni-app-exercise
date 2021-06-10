@@ -44,7 +44,7 @@ export default {
           {
             iconPath: "shiwu-",
             selectedIconPath: "yinliao2",
-            text: "饮料",
+            text: "购物车",
             count,
             customIcon: true,
           },

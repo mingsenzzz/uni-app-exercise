@@ -21,7 +21,7 @@
 			"path": "pages/drinks/index",
 			"style": {
 				"navigationStyle": "custom",
-				"navigationBarTitleText": "饮料"
+				"navigationBarTitleText": "购物车"
 			}
 		},
 		{

@@ -11,7 +11,7 @@ const state = {
     {
       iconPath: "shiwu-",
       selectedIconPath: "yinliao2",
-      text: "饮料",
+      text: "购物车",
       count: 0,
       customIcon: true,
     },
