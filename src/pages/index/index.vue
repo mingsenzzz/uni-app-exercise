@@ -1,37 +1,44 @@
 <template>
   <view class="homePageWrap">
     <view class="homePageContent">
-      <Swapper />
-      <FoodClassification />
-      <FooterBar />
+      <!-- 主页 -->
+      <HomePage v-show="currentActiveTab == 0" />
+
+      <FooterBar :onSwitchTabbar="onSwitchTabbar" />
     </view>
   </view>
 </template>
 
 <script>
-import Swapper from "../../components/swipper";
-import FoodClassification from "../../components/foodClassification";
 import FooterBar from "../../common/footerBar";
+import HomePage from "../homePage/index";
+let that = void 0;
 export default {
+  name: "parent",
   data() {
     return {
-      title: "Hello",
-      current: 0,
+      title: "Hello111",
+      currentActiveTab: 0,
     };
   },
   components: {
-    Swapper,
-    FoodClassification,
     FooterBar,
+    HomePage,
   },
   onLoad() {
-    this.test();
+    // this.test();
+  },
+  mounted() {
+    that = this;
   },
   methods: {
     test() {
       this.$u.request.getUserInfo().then((res) => {
         console.log(res, "res");
       });
+    },
+    onSwitchTabbar(key) {
+      that.currentActiveTab = key;
     },
   },
 };
