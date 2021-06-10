@@ -1,9 +1,12 @@
 <template>
   <view class="homePageWrap">
     <view class="homePageContent">
+      <NavBar :navBarType="currentActiveTab" />
       <!-- 主页 -->
       <HomePage v-show="currentActiveTab == 0" />
 
+      <!-- 购物车页面 -->
+      <CartPage />
       <FooterBar :onSwitchTabbar="onSwitchTabbar" />
     </view>
   </view>
@@ -12,6 +15,8 @@
 <script>
 import FooterBar from "../../common/footerBar";
 import HomePage from "../homePage/index";
+import CartPage from "../cart";
+import NavBar from "../../common/navBar";
 let that = void 0;
 export default {
   name: "parent",
@@ -24,6 +29,8 @@ export default {
   components: {
     FooterBar,
     HomePage,
+    CartPage,
+    NavBar,
   },
   onLoad() {
     // this.test();
@@ -41,6 +48,7 @@ export default {
       that.currentActiveTab = key;
     },
   },
+  computed: {},
 };
 </script>
 

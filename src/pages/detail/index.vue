@@ -1,6 +1,6 @@
 <template>
   <view class="commodityInfo">
-    <u-navbar back-text="返回" title="商品详情"></u-navbar>
+    <NavBar :navBarType="4" />
     <view class="content">
       <!-- 图片区域 -->
       <view class="picIntro">
@@ -46,12 +46,16 @@
 
 <script>
 import "./index.scss";
+import NavBar from "../../common/navBar";
 export default {
   data() {
     return {
       title: "Hello",
       commodityInfo: {},
     };
+  },
+  components: {
+    NavBar,
   },
   onLoad({ id }) {
     //两个页面之间的交互方式
@@ -74,8 +78,7 @@ export default {
   methods: {
     addToCart() {
       this.$store.dispatch("addOneProductToCartAction", {
-        icon:
-          "www.baidu.com/s?wd=%E9%AB%98%E8%80%83&sa=ire_dl_gh_logo_texing&rsv_dl=igh_logo_pc",
+        icon: "www.baidu.com/s?wd=%E9%AB%98%E8%80%83&sa=ire_dl_gh_logo_texing&rsv_dl=igh_logo_pc",
         name: "柠檬水",
         id: 22222,
       });
