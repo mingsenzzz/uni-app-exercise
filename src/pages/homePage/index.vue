@@ -1,5 +1,5 @@
 <template>
-  <view class="content">
+  <view class="homePageContent">
     <Swapper />
     <FoodClassification />
   </view>
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style>
-.content {
+.homePageContent {
   display: flex;
   flex-direction: column;
   align-items: center;
