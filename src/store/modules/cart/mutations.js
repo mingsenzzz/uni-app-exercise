@@ -16,6 +16,13 @@ const mutations = {
       state.addedProducts.unshift(product);
     }
   },
+  updateSelectedMapMutation(state, { key, value }) {
+    //如果对对象操作，最好赋值新的，因为如果是新增属性的话，则无法监听到变化
+    state.selectedProductsMap = {
+      ...state.selectedProductsMap,
+      key: value,
+    };
+  },
 };
 
 export default mutations;

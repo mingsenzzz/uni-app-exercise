@@ -1,6 +1,11 @@
 <template>
   <view class="oneProductWrap">
-    <u-checkbox class="checkBox" wrap="true">
+    <u-checkbox
+      class="checkBox"
+      wrap="true"
+      v-model="selectedProductsMap[product.id]"
+      @change="onSelectProduct"
+    >
       <view class="cheboxLabel">
         <image :src="product.icon" class="image" />
         <view class="productInfo">
@@ -29,6 +34,7 @@
 
 <script>
 import ProductNumberController from "../productNumberController";
+import { mapState } from "vuex";
 export default {
   data() {
     return {};
@@ -38,6 +44,19 @@ export default {
   },
   props: {
     product: Object,
+  },
+  computed: {
+    ...mapState({
+      selectedProductsMap: (state) => state.cart.selectedProductsMap,
+    }),
+  },
+  methods: {
+    onSelectProduct({ value }) {
+      this.$store.dispatch("updateSelectedMapAction", {
+        key: this.product.id,
+        value,
+      });
+    },
   },
 };
 </script>

@@ -15,6 +15,7 @@ const state = {
       count: 3,
     },
   ],
+  selectedProductsMap: {},
 };
 
 const getters = {};
