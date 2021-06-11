@@ -1,23 +1,37 @@
 <template>
   <view class="productNumberController">
-    <view class="box" @click="decreaseProduct">-</view>
+    <view class="box" @click="changeProductCount(false)">-</view>
     <input class="box input" :value="count" disabled="true" type="number" />
-    <view class="box" @click="increaseProduct">+</view>
+    <view class="box" @click="changeProductCount(true)">+</view>
   </view>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {};
   },
   props: {
     count: Number,
-    id: Number,
+    product: Object,
+    productId: [Number, String],
   },
   methods: {
-    increaseProduct() {},
-    decreaseProduct() {},
+    changeProductCount(bol) {
+      if (this.product.count === 0 && !bol) return;
+      this.$store.dispatch("addOrSubProductToCartAction", {
+        product: this.product,
+        isAdd: bol,
+      });
+    },
+  },
+  computed: {
+    ...mapState({
+      productsData(state) {
+        return state.cart.addedProducts;
+      },
+    }),
   },
 };
 </script>

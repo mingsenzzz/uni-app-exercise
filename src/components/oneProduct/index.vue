@@ -15,7 +15,11 @@
             >
           </view>
           <view class="right">
-            <ProductNumberController :id="product.id" :count="product.count" />
+            <ProductNumberController
+              :productId="product.id"
+              :count="product.count"
+              :product="product"
+            />
           </view>
         </view>
       </view>

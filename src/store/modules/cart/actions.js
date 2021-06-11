@@ -1,6 +1,6 @@
 const actions = {
-  addOneProductToCartAction({ commit, state }, data) {
-    commit("addOneProductToCartMutation", data);
+  addOrSubProductToCartAction({ commit, state }, { product, isAdd }) {
+    commit("addOrSubProductToCartMutation", { product, isAdd });
   },
 };
 

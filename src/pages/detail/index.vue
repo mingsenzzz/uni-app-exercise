@@ -77,7 +77,7 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$store.dispatch("addOneProductToCartAction", {
+      this.$store.dispatch("addOrSubProductToCartAction", {
         icon: "www.baidu.com/s?wd=%E9%AB%98%E8%80%83&sa=ire_dl_gh_logo_texing&rsv_dl=igh_logo_pc",
         name: "柠檬水",
         id: 22222,
