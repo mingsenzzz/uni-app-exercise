@@ -14,7 +14,9 @@
               ><view class="bag">/袋子</view></view
             >
           </view>
-          <view class="right">222</view>
+          <view class="right">
+            <ProductNumberController :id="product.id" :count="product.count" />
+          </view>
         </view>
       </view>
     </u-checkbox>
@@ -22,9 +24,13 @@
 </template>
 
 <script>
+import ProductNumberController from "../productNumberController";
 export default {
   data() {
     return {};
+  },
+  components: {
+    ProductNumberController,
   },
   props: {
     product: Object,
@@ -54,8 +60,13 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 8rpx 0px;
       text-align: left;
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8rpx 0;
     }
     .price {
       display: flex;

@@ -2,7 +2,7 @@
   <view class="cartWrap">
     <view class="deleteProduct"> 删除 </view>
     <view class="products">
-      <u-checkbox-group @change="onCheckboxChange">
+      <u-checkbox-group @change="onCheckboxChange" label-disabled="true">
         <OneProduct
           v-for="product in productsData"
           :product="product"
