@@ -6,7 +6,7 @@
       <HomePage v-show="currentActiveTab == 0" />
 
       <!-- 购物车页面 -->
-      <CartPage />
+      <CartPage :currentActiveTab="currentActiveTab" />
       <FooterBar :onSwitchTabbar="onSwitchTabbar" />
     </view>
   </view>
