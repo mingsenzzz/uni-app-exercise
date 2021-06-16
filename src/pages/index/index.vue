@@ -66,6 +66,8 @@ export default {
   .userAvatar {
     text-align: center;
     margin-bottom: 36rpx;
+    height: 45rpx;
+    width: 45rpx;
   }
   .userName {
     font-size: 36rpx;
