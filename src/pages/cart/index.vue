@@ -3,7 +3,7 @@
     <scroll-view class="cartWrap">
       <!-- <view class="deleteProduct"> 删除 </view> -->
       <view class="products">
-        <u-checkbox-group @change="onCheckboxChange" label-disabled="true">
+        <u-checkbox-group label-disabled="true">
           <OneProduct
             v-for="product in productsData"
             :product="product"
@@ -13,7 +13,7 @@
       </view>
     </scroll-view>
     <view class="cartOperationsWrap" v-if="currentActiveTab == 1">
-      <CartOperations />
+      <CartOperations :productsData="productsData" />
     </view>
   </view>
 </template>
@@ -27,11 +27,7 @@ export default {
     return {};
   },
   components: { OneProduct, CartOperations },
-  methods: {
-    onCheckboxChange(keys) {
-      console.log(keys, "keys");
-    },
-  },
+  methods: {},
   props: {
     currentActiveTab: Number,
   },
@@ -56,6 +52,7 @@ export default {
   background-color: #eff2f5;
   padding: 24rpx;
   width: 750rpx;
+  box-sizing: border-box;
 }
 .cartOperationsWrap {
   position: fixed;
@@ -63,6 +60,5 @@ export default {
   width: 100%;
   border-bottom: 2rpx solid #f0f0f0;
   background-color: #fff;
-  height: 50rpx;
 }
 </style>

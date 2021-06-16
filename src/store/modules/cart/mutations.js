@@ -16,12 +16,12 @@ const mutations = {
       state.addedProducts.unshift(product);
     }
   },
-  updateSelectedMapMutation(state, { key, value }) {
+  updateSelectedMapMutation(state, data) {
     //如果对对象操作，最好赋值新的，因为如果是新增属性的话，则无法监听到变化
     //写法1
     state.selectedProductsMap = {
       ...state.selectedProductsMap,
-      key: value,
+      ...data,
     };
     //写法2 (vue提供的更新对象属性的方法)
     // Vue.set(state.selectedProductsMap, key, value)
