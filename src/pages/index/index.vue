@@ -1,20 +1,26 @@
 <template>
-  <view class="homePageWrap">
-    <view class="homePageContent">
-      <NavBar :navBarType="currentActiveTab" />
-      <!-- 主页 -->
-      <HomePage v-show="currentActiveTab == 0" />
+  <view class="homePageContent">
+    <NavBar :navBarType="currentActiveTab" />
+    <!-- 主页 -->
+    <HomePage v-show="currentActiveTab == 0" />
 
-      <!-- 购物车页面 -->
-      <CartPage :currentActiveTab="currentActiveTab" />
-      <FooterBar :onSwitchTabbar="onSwitchTabbar" />
-    </view>
+    <!-- 购物车页面 -->
+    <CartPage
+      :currentActiveTab="currentActiveTab"
+      v-show="currentActiveTab == 1"
+    />
+
+    <!-- 个人中心 -->
+    <PersonalCenter v-show="currentActiveTab == 2" />
+
+    <FooterBar :onSwitchTabbar="onSwitchTabbar" />
   </view>
 </template>
 
 <script>
 import FooterBar from "../../common/footerBar";
 import HomePage from "../homePage/index";
+import PersonalCenter from "../personalCenter";
 import CartPage from "../cart";
 import NavBar from "../../common/navBar";
 let that = void 0;
@@ -23,7 +29,7 @@ export default {
   data() {
     return {
       title: "Hello111",
-      currentActiveTab: 0,
+      currentActiveTab: 2,
     };
   },
   components: {
@@ -31,6 +37,7 @@ export default {
     HomePage,
     CartPage,
     NavBar,
+    PersonalCenter,
   },
   onLoad() {
     // this.test();
@@ -53,15 +60,8 @@ export default {
 </script>
 
 <style lang='scss'>
-.homePageWrap {
-  display: flex;
-  text-align: center;
-  padding-top: 50rpx;
-  height: 100vh;
-}
 .homePageContent {
   display: flex;
-  flex-direction: column;
   align-items: center;
   .userAvatar {
     text-align: center;

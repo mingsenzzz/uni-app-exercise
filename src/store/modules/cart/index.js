@@ -9,6 +9,12 @@ const state = {
       count: 1,
     },
     {
+      name: "花椒1kg",
+      icon: "https://cdn.uviewui.com/uview/common/classify/1/2.jpg",
+      id: 4234423321,
+      count: 4,
+    },
+    {
       name: "富昌白胡椒粉 40g",
       icon: "https://cdn.uviewui.com/uview/common/classify/1/7.jpg",
       id: 32132111,

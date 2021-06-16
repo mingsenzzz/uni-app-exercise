@@ -1,5 +1,5 @@
 <template>
-  <view class="cartComWrap">
+  <scroll-view class="cartComWrap">
     <scroll-view class="cartWrap">
       <!-- <view class="deleteProduct"> 删除 </view> -->
       <view class="products">
@@ -15,7 +15,7 @@
     <view class="cartOperationsWrap" v-if="currentActiveTab == 1">
       <CartOperations :productsData="productsData" />
     </view>
-  </view>
+  </scroll-view>
 </template>
 
 <script>
@@ -44,14 +44,13 @@ export default {
 <style lang='scss'>
 .cartComWrap {
   position: relative;
+  padding-top: 140rpx;
 }
 .cartWrap {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
   background-color: #eff2f5;
   padding: 24rpx;
   width: 750rpx;
+  height: 100vh;
   box-sizing: border-box;
 }
 .cartOperationsWrap {
