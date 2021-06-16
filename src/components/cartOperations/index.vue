@@ -99,6 +99,7 @@ export default {
     background-color: #f50;
     color: #fff;
     line-height: 70rpx;
+    text-align: center;
     border-radius: 38rpx;
     margin-left: 24rpx;
   }
